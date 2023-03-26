@@ -17,7 +17,7 @@ export class LoadUserComponent implements OnInit {
   displayColumns = ['id', 'name', 'email', 'action'];
   pageSizeOptions = [3, 6, 9, 12];
   pageSize = 3;
-  pageIndex = 0
+  pageIndex = 0;
   pageLength = 0;
 
   loadUsers() {
@@ -46,7 +46,7 @@ export class LoadUserComponent implements OnInit {
   }
 
   onBtnDelete(id: number): void {
-    if (window.confirm('are you sure to delete?')) {
+    if (window.confirm('Are you sure to delete?')) {
       {
         this.userService.delete(id).subscribe({
           next: (resp) => {
@@ -60,8 +60,5 @@ export class LoadUserComponent implements OnInit {
     }
   }
 
-  constructor(private userService: UsersService, private router: Router) {
-
-
-  }
+  constructor(private userService: UsersService, private router: Router) { }
 }

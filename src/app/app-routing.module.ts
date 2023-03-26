@@ -5,11 +5,11 @@ import { LoadUserComponent } from './myComponents/load-user/load-user.component'
 import { NotfoundComponent } from './myComponents/notfound/notfound.component';
 
 const routes: Routes = [
-  {path:'users/add', component:AddUpdateUserComponent},
-  {path:'users/edit/id', component:AddUpdateUserComponent},
-  {path:'users', component:LoadUserComponent},
-  {path:'', redirectTo:'/users', pathMatch:'full'},
-  {path:'**', component:NotfoundComponent}
+  { path: 'users/add', component: AddUpdateUserComponent },
+  { path: 'users/edit/:id', component: AddUpdateUserComponent },
+  { path: 'users', component: LoadUserComponent },
+  { path: '', redirectTo: '/users', pathMatch: 'full' },
+  { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
