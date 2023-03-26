@@ -6,11 +6,6 @@
       "email": "john@gmail.com"
     },
     {
-      "id": 2,
-      "name": "max",
-      "email": "max@gmail.com"
-    },
-    {
       "id": 3,
       "name": "mathew",
       "email": "mathew@gmail.com"
@@ -19,6 +14,16 @@
       "id": 4,
       "name": "ravindra",
       "email": "ravindra@xyz.com"
+    },
+    {
+      "id": 5,
+      "name": "Asmita Gode",
+      "email": "asmita@gmail.com"
+    },
+    {
+      "id": 6,
+      "name": "Admin Name",
+      "email": "admin@gmail.com"
     }
   ]
 }
