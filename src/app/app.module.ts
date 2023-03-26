@@ -23,8 +23,8 @@ import { AddUpdateUserComponent } from './myComponents/add-update-user/add-updat
   declarations: [
     AppComponent,
     NavComponent,
-    NotfoundComponent,
     LoadUserComponent,
+    NotfoundComponent,
     AddUpdateUserComponent
   ],
   imports: [

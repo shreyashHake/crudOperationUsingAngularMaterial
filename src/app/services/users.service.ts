@@ -7,26 +7,27 @@ import { UserModel } from "../model/user.model";
   providedIn: 'root'
 })
 export class UsersService {
-  apiUrl = "/api/user"
-
-  constructor(private http: HttpClient) { }
-
+  baseUrl = "http://localhost:3000/users"
   addUser = (user: UserModel) => {
-    if (user.id == 0) return this.http.post(this.apiUrl, user);
-    else return this.http.put(`${this.apiUrl}/${user.id}`, user);
+    if (user.id == 0)
+      return this.http.post(this.baseUrl, user);
+    else
+      return this.http.put(`${this.baseUrl}/${user.id}`, user);
   }
 
-  getUsers=(page=1,limit=10)=>
-  this.http.get(this.apiUrl+`?_page=${page}&_limit=${limit}`,{observe:'response'})
-  .pipe(
-   map(response=> {
-     const count= parseInt(response.headers.get('X-Total-Count')||"0",10);
-     const users= response.body as UserModel[]
-     return {users,count}
-   })
-  )
+  getUsers = (page = 1, limit = 10) =>
+    this.http.get(this.baseUrl + `?_page=${page}&_limit=${limit}`, { observe: 'response' })
+      .pipe(
+        map(response => {
+          const count = parseInt(response.headers.get('X-Total-Count') || "0", 10);
+          const users = response.body as UserModel[];
+          return { users, count }
+        })
+      )
 
-  getById = (id:number) => this.http.get<UserModel>(`${this.apiUrl}/${id}`);
+  getById = (id: number) => this.http.get<UserModel>(this.baseUrl + `/${id}`)
 
-  deleteById = (id:number) => this.http.delete<any>(`${this.apiUrl}/${id}`);
+  delete = (id: number) => this.http.delete<any>(this.baseUrl + `/${id}`)
+
+  constructor(private http: HttpClient) { }
 }
