@@ -8,9 +8,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatToolbarModule } from "@angular/material/toolbar";
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 import { NavComponent } from './myComponents/nav/nav.component';
 import { NotfoundComponent } from './myComponents/notfound/notfound.component';
 import { LoadUserComponent } from './myComponents/load-user/load-user.component';
@@ -33,7 +36,9 @@ import { AddUpdateUserComponent } from './myComponents/add-update-user/add-updat
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

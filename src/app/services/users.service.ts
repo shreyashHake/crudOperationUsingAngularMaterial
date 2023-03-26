@@ -16,17 +16,15 @@ export class UsersService {
     else return this.http.put(`${this.apiUrl}/${user.id}`, user);
   }
 
-  getUsers = (page=1, limit=10) => {
-    this.http.get(this.apiUrl+`?_page=${page}$?_limit=${limit}`, {observe:'response'})
-    .pipe(
-      map((res) => {
-        const count = parseInt(res.headers.get('X-Total-Count') || '0', 10);
-        const users = res.body as UserModel[];
-
-        return {count, users};
-      })
-    )
-  }
+  getUsers=(page=1,limit=10)=>
+  this.http.get(this.apiUrl+`?_page=${page}&_limit=${limit}`,{observe:'response'})
+  .pipe(
+   map(response=> {
+     const count= parseInt(response.headers.get('X-Total-Count')||"0",10);
+     const users= response.body as UserModel[]
+     return {users,count}
+   })
+  )
 
   getById = (id:number) => this.http.get<UserModel>(`${this.apiUrl}/${id}`);
 
