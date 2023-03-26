@@ -12,11 +12,17 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { NavComponent } from './myComponents/nav/nav.component';
+import { NotfoundComponent } from './myComponents/notfound/notfound.component';
+import { LoadUserComponent } from './myComponents/load-user/load-user.component';
+import { AddUpdateUserComponent } from './myComponents/add-update-user/add-update-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavComponent
+    NavComponent,
+    NotfoundComponent,
+    LoadUserComponent,
+    AddUpdateUserComponent
   ],
   imports: [
     BrowserModule,
